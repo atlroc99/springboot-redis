@@ -1,0 +1,21 @@
+###6d7ee20d-32b3-4822-896d-dee69b28579c
+#5701c45a-8abc-47bc-9f63-c60dc6710730
+GET http://localhost:9090/api/student?id=6d7ee20d-32b3-4822-896d-dee69b28579c
+Accept: application/json
+
+###
+GET http://localhost:9090/api/student/all
+Accept: application/json
+
+###
+POST http://localhost:9090/api/student
+Content-Type: application/json
+
+{
+  "firstName": "Jonathan",
+  "lastName": "Asgard",
+  "gender": "Male",
+  "grade": 5
+}
+
+###
