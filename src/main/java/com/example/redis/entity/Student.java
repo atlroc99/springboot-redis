@@ -6,25 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.redis.core.RedisHash;
 
+import java.io.Serializable;
+
 @RedisHash
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
-public class Student {
-/*    public enum Gender {
-        MALE("Male"), FEMALE("Female");
-        private String gender;
-
-        Gender(String gender) {
-            this.gender = gender;
-        }
-
-        public String getGender() {
-            return this.gender;
-        }
-    }*/
-
+public class Student implements Serializable {
     private String id;
     private String firstName;
     private String lastName;

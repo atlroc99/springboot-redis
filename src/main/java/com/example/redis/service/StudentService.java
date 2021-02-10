@@ -6,15 +6,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class StudentService {
-    @Autowired
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     public Student addStudent(Student student) {
         if (isNullOrEmpty(student.getId())) {
@@ -24,14 +23,11 @@ public class StudentService {
     }
 
     public Student getStudentById(String id) {
-        Optional<Student> op = studentRepository.findById(id);
-        return op.get();
+        return studentRepository.getById(id);
     }
 
-    public List<Student> getStudents() {
-        List<Student> students = new ArrayList<>();
-        studentRepository.findAll().forEach(students::add);
-        return students;
+    public Map<String, Student> getStudents() {
+        return studentRepository.list();
     }
 
     public void updateStudent(Student student) throws Exception {
@@ -47,7 +43,7 @@ public class StudentService {
     }
 
     public void deleteStudent(String id) {
-        studentRepository.delete(getStudentById(id));
+        studentRepository.delete(id);
     }
 
     private boolean isNullOrEmpty(String val) {
