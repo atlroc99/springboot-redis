@@ -3,6 +3,7 @@ package com.example.redis.controller;
 import com.example.redis.entity.Student;
 import com.example.redis.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

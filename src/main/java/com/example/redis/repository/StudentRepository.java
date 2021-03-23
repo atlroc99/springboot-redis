@@ -1,6 +1,7 @@
 package com.example.redis.repository;
 
 import com.example.redis.entity.Student;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.Map;
 
