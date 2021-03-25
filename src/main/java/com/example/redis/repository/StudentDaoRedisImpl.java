@@ -1,6 +1,7 @@
 package com.example.redis.repository;
 
 import com.example.redis.entity.Student;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -8,15 +9,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
-@Profile("test")
-@Repository
-public class StudentRepositoryImpl implements StudentRepository {
+@Profile("cloud")
+@Repository(value = "studentDaoRedisImpl")
+public class StudentDaoRedisImpl implements StudentDao {
     RedisTemplate<String, Object> redisTemplate;
 
     //    public interface HashOperations<H, HK, HV> {
     HashOperations<String, String, Student> hashOperations;
 
-    public StudentRepositoryImpl(RedisTemplate<String, Object> redisTemplate) {
+    public StudentDaoRedisImpl(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
         this.hashOperations = redisTemplate.opsForHash();
     }

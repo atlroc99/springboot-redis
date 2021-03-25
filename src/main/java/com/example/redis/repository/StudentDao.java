@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Map;
 
-public interface StudentRepository {
+public interface StudentDao {
     Student save(Student student);
     Student update(Student student);
     Map<String, Student> list();

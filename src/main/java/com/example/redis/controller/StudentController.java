@@ -3,12 +3,11 @@ package com.example.redis.controller;
 import com.example.redis.entity.Student;
 import com.example.redis.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -16,7 +15,7 @@ import java.util.Map;
 public class StudentController {
 
     @Autowired
-    private StudentService studentService;
+    StudentService studentService;
 
     @GetMapping("/test")
     public String home() {
