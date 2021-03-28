@@ -85,28 +85,6 @@
 					<doUpdate>true</doUpdate>
 				</configuration>
 			</plugin>
-				<!--	execute shell		-->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
-				<executions>
-					<execution>
-						<phase>clean</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>/bin/bash</executable>
-							<arguments>
-								<argument>${basedir}/scripts/script.sh</argument>
-							</arguments>
-<!--							<executable>${basedir}/scripts/script.sh</executable>-->
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
 			<!-- Spotify Docker Plugin -->
 			<plugin>
 				<groupId>com.spotify</groupId>
@@ -131,6 +109,27 @@
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>-->
 				</configuration>
+			</plugin>
+			<!--	execute shell removing dangling image		-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<phase>clean</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>/bin/bash</executable>
+							<arguments>
+								<argument>${basedir}/scripts/script.sh</argument>
+							</arguments>
+							<!--							<executable>${basedir}/scripts/script.sh</executable>-->
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<!-- Antrun Plugin to Echo -->
 			<plugin>
