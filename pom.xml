@@ -15,7 +15,8 @@
 	<description>springboot and redis</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<docker-repo>829898772826.dkr.ecr.us-west-1.amazonaws.com/autobots-checklist-service</docker-repo>
+<!--		<docker-repo>829898772826.dkr.ecr.us-west-1.amazonaws.com/student-service</docker-repo>-->
+		<docker-repo>atlroc99/student-redis-service</docker-repo>
 	</properties>
 	<dependencies>
 		<dependency>
