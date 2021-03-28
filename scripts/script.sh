@@ -5,4 +5,13 @@ echo "Version : ${VERSION}"
 
 docker images
 
-docker rmi -f $(docker images --filter "dangling=true")
+strLength=$(docker images --filter="dangling=true")
+
+echo "CHECKING IF DANGLING IMAGES EXISTS"
+
+if [ ${#strLength} -gt 100 ]; then
+  echo "REMOVING DANGLING IMAGE"
+  docker rmi -f $(docker images --filter "dangling=true")
+  else
+    echo "NO DANGLING IMAGES FOUND"
+fi
