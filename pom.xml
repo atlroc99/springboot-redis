@@ -98,7 +98,10 @@
 						</goals>
 						<configuration>
 							<executable>/bin/bash</executable>
-							<executable>${basedir}/scripts/script.sh</executable>
+							<arguments>
+								<argument>${basedir}/scripts/script.sh</argument>
+							</arguments>
+<!--							<executable>${basedir}/scripts/script.sh</executable>-->
 						</configuration>
 					</execution>
 				</executions>
