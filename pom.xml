@@ -97,6 +97,7 @@
 							<goal>exec</goal>
 						</goals>
 						<configuration>
+							<executable>/bin/bash</executable>
 							<executable>${basedir}/scripts/script.sh</executable>
 						</configuration>
 					</execution>
