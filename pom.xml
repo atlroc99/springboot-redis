@@ -86,21 +86,22 @@
 				</configuration>
 			</plugin>
 				<!--	execute shell		-->
-	<!--		<plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.6.0</version>
 				<executions>
 					<execution>
+						<phase>clean</phase>
 						<goals>
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-&lt;!&ndash;							<executable>${basedir}/scripts/calculate-version.sh</executable>&ndash;&gt;
+							<executable>${basedir}/scripts/calculate-version.sh</executable>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>-->
+			</plugin>
 
 			<!-- Spotify Docker Plugin -->
 			<plugin>
@@ -141,7 +142,7 @@
 						<configuration>
 							<target>
 								<echo>**** Displaying value from pom.xml file **** </echo>
-								<echo>Base Dir: ${basedir}}</echo>
+								<echo>Base Dir: ${basedir}</echo>
 								<echo>project version>: ${project.version}</echo>
 								<echo>artifactID: ${project.artifactId}</echo>
 								<echo>build number: ${buildNumber}</echo>
