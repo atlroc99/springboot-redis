@@ -122,13 +122,13 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-							<tasks>
+							<target>
 								<echo>**** Displaying value from pom.xml file **** </echo>
 								<echo>project version>: ${project.version}</echo>
 								<echo>artifactID: ${project.artifactId}</echo>
 								<echo>build number: ${buildNumber}</echo>
 								<echo>**** FINISH ****</echo>
-							</tasks>
+							</target>
 						</configuration>
 
 					</execution>
